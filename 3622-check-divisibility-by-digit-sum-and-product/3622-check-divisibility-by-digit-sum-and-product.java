@@ -14,13 +14,16 @@ class Solution {
          
         }
 
+
         int total = sum + prod;
 
-        if((val%total)==0){
-            return true;
-        }else{
-            return false;
-        }
+        // if((val%total)==0){
+        //     return true;
+        // }else{
+        //     return false;
+        // }
+
+        return val %total == 0;
 
         
     }
