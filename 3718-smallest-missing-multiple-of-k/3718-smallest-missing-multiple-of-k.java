@@ -1,17 +1,20 @@
+import java.util.HashSet;
+import java.util.Set;
+
 class Solution {
     public int missingMultiple(int[] nums, int k) {
-    Set<Integer> present = new HashSet<>();
-      
-      for(int num : nums){
-        present.add(num);
-      }
+        Set<Integer> present = new HashSet<>();
 
-      int multiple = k;
+        for (int num : nums) {
+            present.add(num);
+        }
 
-      while(present.contains(multiple)){
-        multiple  += k;
-      }
+        int multiple = k;
 
-      return multiple;
+        while (present.contains(multiple)) {
+            multiple += k;
+        }
+
+        return multiple;
     }
 }
