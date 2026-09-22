@@ -13,11 +13,7 @@ class Solution {
                 j++;
 
             }
-            else if (nums[i] != 0 && nums[j] != 0){
-                
-                i++;
-                j++;
-            }else if(nums[i] ==0 && nums[j]==0){
+           else if(nums[i] ==0 && nums[j]==0){
                
                 j++;
             }else{
