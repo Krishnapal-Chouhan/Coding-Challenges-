@@ -1,47 +1,45 @@
 class Solution {
     public int[] sortedSquares(int[] nums) {
-        int bp =nums.length;
-        int newarr[] = new int [nums.length];
-        for(int i=0;i<nums.length;i++){
+        int bp=nums.length;
+        for(int i=0; i<nums.length;i++){
             if(nums[i]>=0){
                 bp = i;
                 break;
             }
         }
 
-        for(int j=0;j<nums.length;j++){
-            nums[j] = nums[j] * nums[j];
+        for(int f=0;f<nums.length;f++){
+            nums[f]= nums[f]* nums[f];
+        }
+
+        int j=bp-1;
+        int k = bp;
+        int newarr[] = new int [nums.length];
+        int m =0;
+
+        while(j>=0 && k<nums.length){
+            if(nums[j]>=nums[k]){
+                newarr[m++] = nums[k];
+                k++; 
+            }else if (nums[j]< nums[k]){
+                newarr[m++]= nums[j];
+                j--;
+            }
+        }
+
+        while(j>=0){
+            newarr[m++] = nums[j--];
+        }
+
+        while(k<nums.length){
+            newarr[m++] = nums[k++];
         }
 
 
 
-       int i = bp-1;
-       int j = bp;
-       int k=0;
+    return newarr;
 
-       while(i>=0 && j<nums.length){
 
-        if(nums[i]<=nums[j]){
-            newarr[k++] = nums[i];
-            i--;
-        }else{
-            newarr[k++] = nums[j];
-            j++;
-        }
-
-       }
-
-       while(i>=0){
-        newarr[k++] = nums[i];
-        i--;
-       }
-
-       while(j<nums.length){
-        newarr[k++] = nums[j];
-        j++;
-       }
-
-       return newarr;
 
     }
 }
