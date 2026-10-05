@@ -14,9 +14,6 @@ class Solution {
                 }else{
                     j++;
                 }
-               
-           
-            
         }
 
         return i+1;
